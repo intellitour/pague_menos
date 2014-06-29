@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+	<ui:composition template="/WEB-INF/template/template.xhtml">
+		<ui:define name="conteudo">
+			<p:layout fullPage="true">
+				<p:layoutUnit header="Pague Menos" position="north">
+					<h1>Hello World!!!</h1>
+				</p:layoutUnit>
+				<p:layoutUnit header="Teste de Arquitetura" position="center">
+					<h:form>
+						<h:panelGrid columns="1">
+							<p:outputLabel value="Palavra para incluir:" for="inc"/>
+							<p:inputText id="inc" value="#{testeBean.testeVO.noTeste}" required="true">
+								<p:ajax event="keyup" update=":urlFormatada"/>
+							</p:inputText>
+							<p:message for="inc" id="msgForInc"/>
+							<f:facet name="footer">
+								<p:commandButton value="Salvar e Listar" icon="ui-icon-disk" action="#{testeBean.incluir}" oncomplete="atualizarResultados();"/>
+							</f:facet>
+						</h:panelGrid>
+						
+						<p:remoteCommand name="atualizarResultados" action="#{testeBean.listar}" update="@form"/>
+						
+						<p:outputPanel id="pnListaResultados">
+							<p:dataTable value="#{testeBean.colTesteVO}" var="t" rendered="#{(testeBean.colTesteVO != null and testeBean.colTesteVO.size() gt 0)}">
+								<p:column headerText="ID">
+									<h:outputText value="#{t.nuTeste}" />
+								</p:column>
+								<p:column headerText="Palavra">
+									<h:outputText value="#{t.noTeste}" />
+								</p:column>
+							</p:dataTable>
+						</p:outputPanel>
+					</h:form>
+				</p:layoutUnit>
+				<p:layoutUnit header="Veja também em REST" position="south">
+					<h2>
+						<h:outputFormat value="#{testeBean.serverURL}/{0}">
+							<f:param value="rest/Teste/listar"/>
+						</h:outputFormat>
+						<br />
+						<h:outputFormat id="urlFormatada" value="#{testeBean.serverURL}/{0}/{1}">
+							<f:param value="rest/Teste/incluir"/>
+							<f:param value="#{testeBean.testeVO.noTeste!=null?testeBean.testeVO.noTeste:'umaPalavraLegalAqui'}"/>
+						</h:outputFormat>
+					</h2>
+				</p:layoutUnit>
+			</p:layout>
+		</ui:define>
+	</ui:composition>
+</html>
