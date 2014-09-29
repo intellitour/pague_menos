@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+tbody {
+	text-align: left;
+}
+
+tr {
+	vertical-align: middle;
+}
+
+td {
+	vertical-align: middle;
+}
+
+.ui-widget {
+	font-size: 1em !important;
+}
+.ui-outputlabel .ui-outputlabel-rfi {
+	color: red;
+	font-weight: bolder;
+}
+.files {
+	width: 100%;;
+}
+
+.ui-cell-editor-input {
+	white-space: normal;
+}
+.ui-cell-editor-input input {
+	margin-bottom: 0 !important;
+}

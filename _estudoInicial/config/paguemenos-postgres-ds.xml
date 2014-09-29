@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.ironjacamar.org/doc/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ironjacamar.org/doc/schema http://www.ironjacamar.org/doc/schema/datasources_1_1.xsd">
+	
+	<datasource jndi-name="java:/jdbc/pagueMenos" jta="true" use-ccm="true"
+		enabled="true" use-java-context="true" pool-name="SCIES">
+		
+		<connection-url>jdbc:postgresql://localhost:5432/pague_menos</connection-url>
+		<driver>postgresql-9.3-1100-jdbc41.jar</driver>
+		<driver-class>org.postgresql.Driver</driver-class>
+		
+		<pool>
+			<min-pool-size>1</min-pool-size>
+			<max-pool-size>50</max-pool-size>
+		</pool>
+		
+		<validation>
+			<check-valid-connection-sql>select 1;</check-valid-connection-sql>
+		</validation>
+		
+		<security>
+			<user-name>postgres</user-name>
+			<password>1234</password>
+		</security>
+		
+		<new-connection-sql>select 1;</new-connection-sql>
+		<transaction-isolation>TRANSACTION_SERIALIZABLE</transaction-isolation>
+		
+	</datasource>
+	
+</datasources>
