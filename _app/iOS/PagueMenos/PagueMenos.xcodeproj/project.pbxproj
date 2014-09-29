@@ -7,12 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E60470F0DAC4FF4AA2076D9 /* libPods-PagueMenos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F5283DAD64F0794916651 /* libPods-PagueMenos.a */; };
 		EB75CC6919D988AC00A36F62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC6819D988AC00A36F62 /* main.m */; };
 		EB75CC6C19D988AC00A36F62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC6B19D988AC00A36F62 /* AppDelegate.m */; };
 		EB75CC6F19D988AC00A36F62 /* PagueMenos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC6D19D988AC00A36F62 /* PagueMenos.xcdatamodeld */; };
 		EB75CC7519D988AC00A36F62 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC7319D988AC00A36F62 /* iPhone.storyboard */; };
 		EB75CC8619D988AC00A36F62 /* PagueMenosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC8519D988AC00A36F62 /* PagueMenosTests.m */; };
 		EB75CC9019D98B1B00A36F62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC8F19D98B1B00A36F62 /* Images.xcassets */; };
+		EB75CC9719D9A04000A36F62 /* Philosopher 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC9219D9A04000A36F62 /* Philosopher 700.ttf */; };
+		EB75CC9819D9A04000A36F62 /* Philosopher 700italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC9319D9A04000A36F62 /* Philosopher 700italic.ttf */; };
+		EB75CC9919D9A04000A36F62 /* Philosopher italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC9419D9A04000A36F62 /* Philosopher italic.ttf */; };
+		EB75CC9A19D9A04000A36F62 /* Philosopher regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC9519D9A04000A36F62 /* Philosopher regular.ttf */; };
+		EB75CC9B19D9A04000A36F62 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB75CC9619D9A04000A36F62 /* fontawesome-webfont.ttf */; };
+		EB75CCA119D9A0B900A36F62 /* PagueMenosTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCA019D9A0B900A36F62 /* PagueMenosTabBarController.m */; };
+		EB75CCBD19D9A0E900A36F62 /* UIViewController+ProgressDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCA419D9A0E900A36F62 /* UIViewController+ProgressDialog.m */; };
+		EB75CCBF19D9A0E900A36F62 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCA819D9A0E900A36F62 /* UIImage+ImageEffects.m */; };
+		EB75CCC019D9A0E900A36F62 /* UIColor+EasyRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCAA19D9A0E900A36F62 /* UIColor+EasyRGB.m */; };
+		EB75CCC119D9A0E900A36F62 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCAC19D9A0E900A36F62 /* UIImage+Resizing.m */; };
+		EB75CCC219D9A0E900A36F62 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCAE19D9A0E900A36F62 /* NSString+Base64.m */; };
+		EB75CCC319D9A0E900A36F62 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCB019D9A0E900A36F62 /* NSString+Utils.m */; };
+		EB75CCC419D9A0E900A36F62 /* UILabel+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCB219D9A0E900A36F62 /* UILabel+Image.m */; };
+		EB75CCC519D9A0E900A36F62 /* UIWebView+Clean.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCB419D9A0E900A36F62 /* UIWebView+Clean.m */; };
+		EB75CCC619D9A0E900A36F62 /* UITextView+FontName.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCB619D9A0E900A36F62 /* UITextView+FontName.m */; };
+		EB75CCC719D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCB819D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.m */; };
+		EB75CCC819D9A0E900A36F62 /* UIButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCBA19D9A0E900A36F62 /* UIButton+FontAwesome.m */; };
+		EB75CCC919D9A0E900A36F62 /* UILabel+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCBC19D9A0E900A36F62 /* UILabel+CustomFont.m */; };
+		EB75CCCC19D9A2CE00A36F62 /* PagueMenosNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCCB19D9A2CE00A36F62 /* PagueMenosNavigationController.m */; };
+		EB75CCD119D9B5FC00A36F62 /* LerCodigoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CCD019D9B5FC00A36F62 /* LerCodigoViewController.m */; };
+		EB75CCD319D9B63600A36F62 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB75CCD219D9B63600A36F62 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F45716EC06844FF84B2C232 /* Pods-PagueMenos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PagueMenos.xcconfig"; path = "Pods/Pods-PagueMenos.xcconfig"; sourceTree = "<group>"; };
+		818F5283DAD64F0794916651 /* libPods-PagueMenos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PagueMenos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB75CC6319D988AC00A36F62 /* PagueMenos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagueMenos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB75CC6719D988AC00A36F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB75CC6819D988AC00A36F62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,6 +61,42 @@
 		EB75CC8419D988AC00A36F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB75CC8519D988AC00A36F62 /* PagueMenosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagueMenosTests.m; sourceTree = "<group>"; };
 		EB75CC8F19D98B1B00A36F62 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB75CC9219D9A04000A36F62 /* Philosopher 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher 700.ttf"; sourceTree = "<group>"; };
+		EB75CC9319D9A04000A36F62 /* Philosopher 700italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher 700italic.ttf"; sourceTree = "<group>"; };
+		EB75CC9419D9A04000A36F62 /* Philosopher italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher italic.ttf"; sourceTree = "<group>"; };
+		EB75CC9519D9A04000A36F62 /* Philosopher regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher regular.ttf"; sourceTree = "<group>"; };
+		EB75CC9619D9A04000A36F62 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		EB75CC9F19D9A0B900A36F62 /* PagueMenosTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagueMenosTabBarController.h; sourceTree = "<group>"; };
+		EB75CCA019D9A0B900A36F62 /* PagueMenosTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagueMenosTabBarController.m; sourceTree = "<group>"; };
+		EB75CCA319D9A0E900A36F62 /* UIViewController+ProgressDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProgressDialog.h"; sourceTree = "<group>"; };
+		EB75CCA419D9A0E900A36F62 /* UIViewController+ProgressDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProgressDialog.m"; sourceTree = "<group>"; };
+		EB75CCA719D9A0E900A36F62 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		EB75CCA819D9A0E900A36F62 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		EB75CCA919D9A0E900A36F62 /* UIColor+EasyRGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EasyRGB.h"; sourceTree = "<group>"; };
+		EB75CCAA19D9A0E900A36F62 /* UIColor+EasyRGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EasyRGB.m"; sourceTree = "<group>"; };
+		EB75CCAB19D9A0E900A36F62 /* UIImage+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
+		EB75CCAC19D9A0E900A36F62 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
+		EB75CCAD19D9A0E900A36F62 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		EB75CCAE19D9A0E900A36F62 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		EB75CCAF19D9A0E900A36F62 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		EB75CCB019D9A0E900A36F62 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		EB75CCB119D9A0E900A36F62 /* UILabel+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Image.h"; sourceTree = "<group>"; };
+		EB75CCB219D9A0E900A36F62 /* UILabel+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Image.m"; sourceTree = "<group>"; };
+		EB75CCB319D9A0E900A36F62 /* UIWebView+Clean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Clean.h"; sourceTree = "<group>"; };
+		EB75CCB419D9A0E900A36F62 /* UIWebView+Clean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Clean.m"; sourceTree = "<group>"; };
+		EB75CCB519D9A0E900A36F62 /* UITextView+FontName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+FontName.h"; sourceTree = "<group>"; };
+		EB75CCB619D9A0E900A36F62 /* UITextView+FontName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+FontName.m"; sourceTree = "<group>"; };
+		EB75CCB719D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+FontAwesomeIcon.h"; sourceTree = "<group>"; };
+		EB75CCB819D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FontAwesomeIcon.m"; sourceTree = "<group>"; };
+		EB75CCB919D9A0E900A36F62 /* UIButton+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FontAwesome.h"; sourceTree = "<group>"; };
+		EB75CCBA19D9A0E900A36F62 /* UIButton+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FontAwesome.m"; sourceTree = "<group>"; };
+		EB75CCBB19D9A0E900A36F62 /* UILabel+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CustomFont.h"; sourceTree = "<group>"; };
+		EB75CCBC19D9A0E900A36F62 /* UILabel+CustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CustomFont.m"; sourceTree = "<group>"; };
+		EB75CCCA19D9A2CE00A36F62 /* PagueMenosNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagueMenosNavigationController.h; sourceTree = "<group>"; };
+		EB75CCCB19D9A2CE00A36F62 /* PagueMenosNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagueMenosNavigationController.m; sourceTree = "<group>"; };
+		EB75CCCF19D9B5FC00A36F62 /* LerCodigoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LerCodigoViewController.h; sourceTree = "<group>"; };
+		EB75CCD019D9B5FC00A36F62 /* LerCodigoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LerCodigoViewController.m; sourceTree = "<group>"; };
+		EB75CCD219D9B63600A36F62 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB75CCD319D9B63600A36F62 /* AVFoundation.framework in Frameworks */,
+				7E60470F0DAC4FF4AA2076D9 /* libPods-PagueMenos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75C54D6951B94EFBA06D99D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CCD219D9B63600A36F62 /* AVFoundation.framework */,
+				818F5283DAD64F0794916651 /* libPods-PagueMenos.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB75CC5A19D988AC00A36F62 = {
 			isa = PBXGroup;
 			children = (
 				EB75CC6519D988AC00A36F62 /* PagueMenos */,
 				EB75CC8219D988AC00A36F62 /* PagueMenosTests */,
 				EB75CC6419D988AC00A36F62 /* Products */,
+				2F45716EC06844FF84B2C232 /* Pods-PagueMenos.xcconfig */,
+				75C54D6951B94EFBA06D99D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +151,9 @@
 		EB75CC6519D988AC00A36F62 /* PagueMenos */ = {
 			isa = PBXGroup;
 			children = (
+				EB75CCA219D9A0C900A36F62 /* Categories */,
+				EB75CC9D19D9A07B00A36F62 /* ViewControllers */,
+				EB75CC9C19D9A04400A36F62 /* Fonts */,
 				EB75CC9119D9900C00A36F62 /* CoreData */,
 				EB75CC7319D988AC00A36F62 /* iPhone.storyboard */,
 				EB75CC8F19D98B1B00A36F62 /* Images.xcassets */,
@@ -122,6 +198,86 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		EB75CC9C19D9A04400A36F62 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CC9219D9A04000A36F62 /* Philosopher 700.ttf */,
+				EB75CC9319D9A04000A36F62 /* Philosopher 700italic.ttf */,
+				EB75CC9419D9A04000A36F62 /* Philosopher italic.ttf */,
+				EB75CC9519D9A04000A36F62 /* Philosopher regular.ttf */,
+				EB75CC9619D9A04000A36F62 /* fontawesome-webfont.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EB75CC9D19D9A07B00A36F62 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CC9E19D9A08000A36F62 /* Aux */,
+				EB75CCCF19D9B5FC00A36F62 /* LerCodigoViewController.h */,
+				EB75CCD019D9B5FC00A36F62 /* LerCodigoViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EB75CC9E19D9A08000A36F62 /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CCCD19D9A3ED00A36F62 /* Tab */,
+				EB75CCCE19D9A3F200A36F62 /* Nav */,
+			);
+			name = Aux;
+			sourceTree = "<group>";
+		};
+		EB75CCA219D9A0C900A36F62 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CCA319D9A0E900A36F62 /* UIViewController+ProgressDialog.h */,
+				EB75CCA419D9A0E900A36F62 /* UIViewController+ProgressDialog.m */,
+				EB75CCA719D9A0E900A36F62 /* UIImage+ImageEffects.h */,
+				EB75CCA819D9A0E900A36F62 /* UIImage+ImageEffects.m */,
+				EB75CCA919D9A0E900A36F62 /* UIColor+EasyRGB.h */,
+				EB75CCAA19D9A0E900A36F62 /* UIColor+EasyRGB.m */,
+				EB75CCAB19D9A0E900A36F62 /* UIImage+Resizing.h */,
+				EB75CCAC19D9A0E900A36F62 /* UIImage+Resizing.m */,
+				EB75CCAD19D9A0E900A36F62 /* NSString+Base64.h */,
+				EB75CCAE19D9A0E900A36F62 /* NSString+Base64.m */,
+				EB75CCAF19D9A0E900A36F62 /* NSString+Utils.h */,
+				EB75CCB019D9A0E900A36F62 /* NSString+Utils.m */,
+				EB75CCB119D9A0E900A36F62 /* UILabel+Image.h */,
+				EB75CCB219D9A0E900A36F62 /* UILabel+Image.m */,
+				EB75CCB319D9A0E900A36F62 /* UIWebView+Clean.h */,
+				EB75CCB419D9A0E900A36F62 /* UIWebView+Clean.m */,
+				EB75CCB519D9A0E900A36F62 /* UITextView+FontName.h */,
+				EB75CCB619D9A0E900A36F62 /* UITextView+FontName.m */,
+				EB75CCB719D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.h */,
+				EB75CCB819D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.m */,
+				EB75CCB919D9A0E900A36F62 /* UIButton+FontAwesome.h */,
+				EB75CCBA19D9A0E900A36F62 /* UIButton+FontAwesome.m */,
+				EB75CCBB19D9A0E900A36F62 /* UILabel+CustomFont.h */,
+				EB75CCBC19D9A0E900A36F62 /* UILabel+CustomFont.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		EB75CCCD19D9A3ED00A36F62 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CC9F19D9A0B900A36F62 /* PagueMenosTabBarController.h */,
+				EB75CCA019D9A0B900A36F62 /* PagueMenosTabBarController.m */,
+			);
+			name = Tab;
+			sourceTree = "<group>";
+		};
+		EB75CCCE19D9A3F200A36F62 /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				EB75CCCA19D9A2CE00A36F62 /* PagueMenosNavigationController.h */,
+				EB75CCCB19D9A2CE00A36F62 /* PagueMenosNavigationController.m */,
+			);
+			name = Nav;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB75CC8919D988AC00A36F62 /* Build configuration list for PBXNativeTarget "PagueMenos" */;
 			buildPhases = (
+				FA6CDD919F64435D966F94E4 /* Check Pods Manifest.lock */,
 				EB75CC5F19D988AC00A36F62 /* Sources */,
 				EB75CC6019D988AC00A36F62 /* Frameworks */,
 				EB75CC6119D988AC00A36F62 /* Resources */,
+				378581469CB247F0BAF1E7A2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,7 +361,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB75CC9019D98B1B00A36F62 /* Images.xcassets in Resources */,
+				EB75CC9919D9A04000A36F62 /* Philosopher italic.ttf in Resources */,
+				EB75CC9B19D9A04000A36F62 /* fontawesome-webfont.ttf in Resources */,
 				EB75CC7519D988AC00A36F62 /* iPhone.storyboard in Resources */,
+				EB75CC9719D9A04000A36F62 /* Philosopher 700.ttf in Resources */,
+				EB75CC9A19D9A04000A36F62 /* Philosopher regular.ttf in Resources */,
+				EB75CC9819D9A04000A36F62 /* Philosopher 700italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,14 +379,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		378581469CB247F0BAF1E7A2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PagueMenos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6CDD919F64435D966F94E4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB75CC5F19D988AC00A36F62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB75CCC519D9A0E900A36F62 /* UIWebView+Clean.m in Sources */,
 				EB75CC6C19D988AC00A36F62 /* AppDelegate.m in Sources */,
+				EB75CCCC19D9A2CE00A36F62 /* PagueMenosNavigationController.m in Sources */,
+				EB75CCC019D9A0E900A36F62 /* UIColor+EasyRGB.m in Sources */,
 				EB75CC6F19D988AC00A36F62 /* PagueMenos.xcdatamodeld in Sources */,
+				EB75CCBF19D9A0E900A36F62 /* UIImage+ImageEffects.m in Sources */,
+				EB75CCC319D9A0E900A36F62 /* NSString+Utils.m in Sources */,
+				EB75CCC219D9A0E900A36F62 /* NSString+Base64.m in Sources */,
+				EB75CCC919D9A0E900A36F62 /* UILabel+CustomFont.m in Sources */,
+				EB75CCC419D9A0E900A36F62 /* UILabel+Image.m in Sources */,
+				EB75CCC719D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.m in Sources */,
+				EB75CCC619D9A0E900A36F62 /* UITextView+FontName.m in Sources */,
 				EB75CC6919D988AC00A36F62 /* main.m in Sources */,
+				EB75CCC119D9A0E900A36F62 /* UIImage+Resizing.m in Sources */,
+				EB75CCBD19D9A0E900A36F62 /* UIViewController+ProgressDialog.m in Sources */,
+				EB75CCD119D9B5FC00A36F62 /* LerCodigoViewController.m in Sources */,
+				EB75CCC819D9A0E900A36F62 /* UIButton+FontAwesome.m in Sources */,
+				EB75CCA119D9A0B900A36F62 /* PagueMenosTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +546,7 @@
 		};
 		EB75CC8A19D988AC00A36F62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F45716EC06844FF84B2C232 /* Pods-PagueMenos.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -346,6 +558,7 @@
 		};
 		EB75CC8B19D988AC00A36F62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F45716EC06844FF84B2C232 /* Pods-PagueMenos.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -3,6 +3,10 @@ platform :ios, "8.0"
 
 target "PagueMenos" do
 
+pod 'MBProgressHUD', '~> 0.9'
+pod 'FontAwesome+iOS', '~> 0.1'
+
+
 end
 
 target "PagueMenosTests" do

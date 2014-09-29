@@ -1,7 +1,157 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fBR-SM-xkH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Pague Menos Tab Bar Controller-->
+        <scene sceneID="Zur-Cx-nKX">
+            <objects>
+                <tabBarController id="fBR-SM-xkH" customClass="PagueMenosTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="3b6-tH-bfG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.52549019607843139" green="0.67450980392156867" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tjp-g4-lkf" kind="relationship" relationship="viewControllers" id="nSb-ld-tnm"/>
+                        <segue destination="Rfu-Sz-wdu" kind="relationship" relationship="viewControllers" id="E1Y-dP-z0t"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqK-fE-Swh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-217" y="389"/>
+        </scene>
+        <!--Próximos-->
+        <scene sceneID="RGa-d5-ykP">
+            <objects>
+                <navigationController id="Rfu-Sz-wdu" customClass="PagueMenosNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Próximos" image="map_marker-50" id="TYd-Nv-s9z"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="k6J-wZ-jLv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.6705882353" green="0.85490196080000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rVO-3T-zly" kind="relationship" relationship="rootViewController" id="w7G-1q-6af"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boA-K3-ezK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="-20"/>
+        </scene>
+        <!--Ler Código-->
+        <scene sceneID="w8Z-cZ-uVA">
+            <objects>
+                <navigationController id="tjp-g4-lkf" customClass="PagueMenosNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ler Código" image="barcode_scanner-50" id="aSg-7f-6yk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Hvn-V5-kEK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.6705882353" green="0.85490196080000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mRt-YR-dxW" kind="relationship" relationship="rootViewController" id="6aI-gy-rt3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQe-q3-P7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="666"/>
+        </scene>
+        <!--Leitura do Código-->
+        <scene sceneID="a3x-Pw-Bsa">
+            <objects>
+                <viewController id="mRt-YR-dxW" customClass="LerCodigoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ccM-td-dSw"/>
+                        <viewControllerLayoutGuide type="bottom" id="BgH-3X-q2f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hgz-Wr-H6V">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(nada detecdado)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjj-AL-BsZ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="25u-XK-Was"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="25u-XK-Was"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="25u-XK-Was"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jjj-AL-BsZ" firstAttribute="leading" secondItem="Hgz-Wr-H6V" secondAttribute="leadingMargin" constant="-16" id="iA8-bQ-T55"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jjj-AL-BsZ" secondAttribute="trailing" constant="-16" id="m3W-SB-vo7"/>
+                            <constraint firstItem="BgH-3X-q2f" firstAttribute="top" secondItem="Jjj-AL-BsZ" secondAttribute="bottom" id="ucv-4p-5Ki"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Jjj-AL-BsZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="iA8-bQ-T55"/>
+                                <exclude reference="m3W-SB-vo7"/>
+                                <exclude reference="ucv-4p-5Ki"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Jjj-AL-BsZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="iA8-bQ-T55"/>
+                                <include reference="m3W-SB-vo7"/>
+                                <include reference="ucv-4p-5Ki"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Leitura do Código" id="kAH-ME-au9"/>
+                    <connections>
+                        <outlet property="lbValorDetectado" destination="Jjj-AL-BsZ" id="107-Y9-vac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEZ-P5-dcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288.5" y="666"/>
+        </scene>
+        <!--Próximos-->
+        <scene sceneID="Ra5-EK-Oxk">
+            <objects>
+                <viewController id="rVO-3T-zly" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aaa-xd-Jpn"/>
+                        <viewControllerLayoutGuide type="bottom" id="iER-JD-leU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sEL-3f-pEw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Próximos" id="GSg-cx-ejz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzx-RX-TO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288.5" y="-20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="barcode_scanner-50" width="25" height="25"/>
+        <image name="map_marker-50" width="25" height="25"/>
+    </resources>
 </document>
