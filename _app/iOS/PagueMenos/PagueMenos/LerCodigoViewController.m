@@ -9,6 +9,9 @@
 #import "LerCodigoViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "NSString+Utils.h"
+#import "UIViewController+ProgressDialog.h"
+#import "Buscape.h"
+#import "DetalharProdutoViewController.h"
 
 @interface LerCodigoViewController () <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *lbValorDetectado;
@@ -84,17 +87,14 @@
     
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.destaqueDeteccao setFrame:CGRectZero];
     
     [self.sessaoDeCaptura startRunning];
     [self.view bringSubviewToFront:self.destaqueDeteccao];
     [self.view bringSubviewToFront:self.lbValorDetectado];
-    
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 - (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
@@ -127,13 +127,35 @@
         if (valorDetectado) {
             if ([valorDetectado isNumeric]) {
                 self.lbValorDetectado.text = valorDetectado;
-                //TODO: trazer mapa com locais onde o produto existe ou abrir tela para cadastrar.
                 break;
             }
             break;
         }else {
             self.lbValorDetectado.text = @"(nada detectado)";
         }
+    }
+    if (![self.lbValorDetectado.text isEqualToString:@"(nada detectado)"]) {
+        [self.sessaoDeCaptura stopRunning];
+        [self showProgressDialog:@"Buscando informações do produto..."];
+        [[Buscape sharedInstance] obterDadosParaProduto:valorDetectado comCallback:^(NSDictionary *dados, NSError *erro) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self dismissProgressDialog];
+                if (!erro) {
+                    if (dados[@"product"]) {
+                        [self performSegueWithIdentifier:@"mostrarDadosDoProdutoSegue" sender:dados];
+                    }else {
+                        //TODO: o produto não foi encontrado.
+                    }
+                }else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                                    message:@"Ocorreu um erro ao obter informações do produto."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+            });
+        }];
     }
     self.destaqueDeteccao.frame = retanguloDestaque;
     
@@ -143,6 +165,13 @@
 {
     [super didReceiveMemoryWarning];
     [self.sessaoDeCaptura stopRunning];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"mostrarDadosDoProdutoSegue"]) {
+        DetalharProdutoViewController *destino = segue.destinationViewController;
+        [destino setProduto:sender];
+    }
 }
 
 @end

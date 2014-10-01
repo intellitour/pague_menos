@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7E60470F0DAC4FF4AA2076D9 /* libPods-PagueMenos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818F5283DAD64F0794916651 /* libPods-PagueMenos.a */; };
+		EB07F7FB19DC2B4B00EE0F3B /* Buscape.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07F7FA19DC2B4B00EE0F3B /* Buscape.m */; };
+		EB07F7FF19DC2F0500EE0F3B /* UrlParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07F7FE19DC2F0500EE0F3B /* UrlParameter.m */; };
+		EB07F80219DC3E8A00EE0F3B /* DetalharProdutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB07F80119DC3E8A00EE0F3B /* DetalharProdutoViewController.m */; };
 		EB75CC6919D988AC00A36F62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC6819D988AC00A36F62 /* main.m */; };
 		EB75CC6C19D988AC00A36F62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC6B19D988AC00A36F62 /* AppDelegate.m */; };
 		EB75CC6F19D988AC00A36F62 /* PagueMenos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB75CC6D19D988AC00A36F62 /* PagueMenos.xcdatamodeld */; };
@@ -50,6 +53,12 @@
 /* Begin PBXFileReference section */
 		2F45716EC06844FF84B2C232 /* Pods-PagueMenos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PagueMenos.xcconfig"; path = "Pods/Pods-PagueMenos.xcconfig"; sourceTree = "<group>"; };
 		818F5283DAD64F0794916651 /* libPods-PagueMenos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PagueMenos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB07F7F919DC2B4B00EE0F3B /* Buscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buscape.h; sourceTree = "<group>"; };
+		EB07F7FA19DC2B4B00EE0F3B /* Buscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buscape.m; sourceTree = "<group>"; };
+		EB07F7FD19DC2F0500EE0F3B /* UrlParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlParameter.h; sourceTree = "<group>"; };
+		EB07F7FE19DC2F0500EE0F3B /* UrlParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlParameter.m; sourceTree = "<group>"; };
+		EB07F80019DC3E8A00EE0F3B /* DetalharProdutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalharProdutoViewController.h; sourceTree = "<group>"; };
+		EB07F80119DC3E8A00EE0F3B /* DetalharProdutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalharProdutoViewController.m; sourceTree = "<group>"; };
 		EB75CC6319D988AC00A36F62 /* PagueMenos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagueMenos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB75CC6719D988AC00A36F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB75CC6819D988AC00A36F62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +137,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB07F7F819DC2B3400EE0F3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EB07F7FC19DC2EF900EE0F3B /* Util */,
+				EB07F7F919DC2B4B00EE0F3B /* Buscape.h */,
+				EB07F7FA19DC2B4B00EE0F3B /* Buscape.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		EB07F7FC19DC2EF900EE0F3B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EB07F7FD19DC2F0500EE0F3B /* UrlParameter.h */,
+				EB07F7FE19DC2F0500EE0F3B /* UrlParameter.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		EB75CC5A19D988AC00A36F62 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +179,7 @@
 		EB75CC6519D988AC00A36F62 /* PagueMenos */ = {
 			isa = PBXGroup;
 			children = (
+				EB07F7F819DC2B3400EE0F3B /* Services */,
 				EB75CCA219D9A0C900A36F62 /* Categories */,
 				EB75CC9D19D9A07B00A36F62 /* ViewControllers */,
 				EB75CC9C19D9A04400A36F62 /* Fonts */,
@@ -216,6 +245,8 @@
 				EB75CC9E19D9A08000A36F62 /* Aux */,
 				EB75CCCF19D9B5FC00A36F62 /* LerCodigoViewController.h */,
 				EB75CCD019D9B5FC00A36F62 /* LerCodigoViewController.m */,
+				EB07F80019DC3E8A00EE0F3B /* DetalharProdutoViewController.h */,
+				EB07F80119DC3E8A00EE0F3B /* DetalharProdutoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -418,7 +449,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB75CCC519D9A0E900A36F62 /* UIWebView+Clean.m in Sources */,
+				EB07F7FF19DC2F0500EE0F3B /* UrlParameter.m in Sources */,
 				EB75CC6C19D988AC00A36F62 /* AppDelegate.m in Sources */,
+				EB07F7FB19DC2B4B00EE0F3B /* Buscape.m in Sources */,
 				EB75CCCC19D9A2CE00A36F62 /* PagueMenosNavigationController.m in Sources */,
 				EB75CCC019D9A0E900A36F62 /* UIColor+EasyRGB.m in Sources */,
 				EB75CC6F19D988AC00A36F62 /* PagueMenos.xcdatamodeld in Sources */,
@@ -430,6 +463,7 @@
 				EB75CCC719D9A0E900A36F62 /* UIBarButtonItem+FontAwesomeIcon.m in Sources */,
 				EB75CCC619D9A0E900A36F62 /* UITextView+FontName.m in Sources */,
 				EB75CC6919D988AC00A36F62 /* main.m in Sources */,
+				EB07F80219DC3E8A00EE0F3B /* DetalharProdutoViewController.m in Sources */,
 				EB75CCC119D9A0E900A36F62 /* UIImage+Resizing.m in Sources */,
 				EB75CCBD19D9A0E900A36F62 /* UIViewController+ProgressDialog.m in Sources */,
 				EB75CCD119D9B5FC00A36F62 /* LerCodigoViewController.m in Sources */,
