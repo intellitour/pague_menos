@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95B64DF2B78149B9860D6450"
+               BlueprintIdentifier = "4652AFAA7ED31FC5A94C29DC"
                BuildableName = "libPods-PagueMenos.a"
                BlueprintName = "Pods-PagueMenos"
                ReferencedContainer = "container:Pods.xcodeproj">
