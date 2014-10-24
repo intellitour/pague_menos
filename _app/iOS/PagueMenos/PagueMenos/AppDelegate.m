@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Foursquare2.h"
+#import "Settings.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    
+    [Foursquare2 setupFoursquareWithClientId:[Settings getClientId]
+                                      secret:[Settings getSecretClientId]
+                                 callbackURL:[Settings getUrlCallback]];
+    
     return YES;
 }
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-PagueMenos-FontAwesome+iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PagueMenos-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PagueMenos-Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PagueMenos.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>05CB4D4150CBA52301907A7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1F8C0E706D50A80068DD64A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E86BF4784DA887188A420821</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFD7D24E6BAC74A2B3E5DA47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
