@@ -152,6 +152,9 @@
                                         <include reference="SlS-Cb-LnY"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="userPosition:" destination="T2a-v3-ocQ" eventType="touchUpInside" id="zFj-Ab-oc8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,18 +181,18 @@
                                 <exclude reference="BhL-Xx-JzN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="IHO-vO-uam"/>
-                                <exclude reference="PRi-LN-Ig8"/>
-                                <exclude reference="ruT-BT-wzq"/>
+                                <exclude reference="5Nl-mk-zAi"/>
+                                <exclude reference="7um-G8-dRQ"/>
+                                <exclude reference="2bc-zE-WA7"/>
                                 <exclude reference="yEo-9S-hWO"/>
                                 <exclude reference="8vK-Xe-trT"/>
                                 <exclude reference="K5D-7a-juP"/>
                                 <exclude reference="ZSh-cc-lPT"/>
                                 <exclude reference="W2q-1N-nbr"/>
                                 <exclude reference="odQ-v7-VON"/>
-                                <exclude reference="5Nl-mk-zAi"/>
-                                <exclude reference="7um-G8-dRQ"/>
-                                <exclude reference="2bc-zE-WA7"/>
+                                <exclude reference="IHO-vO-uam"/>
+                                <exclude reference="PRi-LN-Ig8"/>
+                                <exclude reference="ruT-BT-wzq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -201,18 +204,18 @@
                                 <include reference="BhL-Xx-JzN"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="IHO-vO-uam"/>
-                                <include reference="PRi-LN-Ig8"/>
-                                <include reference="ruT-BT-wzq"/>
+                                <include reference="5Nl-mk-zAi"/>
+                                <include reference="7um-G8-dRQ"/>
+                                <include reference="2bc-zE-WA7"/>
                                 <include reference="yEo-9S-hWO"/>
                                 <include reference="8vK-Xe-trT"/>
                                 <include reference="K5D-7a-juP"/>
                                 <include reference="ZSh-cc-lPT"/>
                                 <include reference="W2q-1N-nbr"/>
                                 <include reference="odQ-v7-VON"/>
-                                <include reference="5Nl-mk-zAi"/>
-                                <include reference="7um-G8-dRQ"/>
-                                <include reference="2bc-zE-WA7"/>
+                                <include reference="IHO-vO-uam"/>
+                                <include reference="PRi-LN-Ig8"/>
+                                <include reference="ruT-BT-wzq"/>
                             </mask>
                         </variation>
                     </view>
@@ -311,6 +314,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2jt-Jm-GnM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6M2-up-NMX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

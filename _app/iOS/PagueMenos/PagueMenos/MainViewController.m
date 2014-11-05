@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btCancelar;
 @property (weak, nonatomic) IBOutlet UIButton *btMostrarPosicao;
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
 @implementation MainViewController
@@ -24,6 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -44,6 +49,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)userPosition:(UIButton *)sender{
+    self.mapView.showsUserLocation = !self.mapView.showsUserLocation;
+}
+
+#pragma mark - Location Controllers
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    if((self.mapView.showsUserLocation) &&
+       ((self.mapView.userLocation.coordinate.latitude != 0) &&
+        (self.mapView.userLocation.coordinate.longitude != 0))) {
+           MKCoordinateRegion region;
+           region.center.latitude = self.mapView.userLocation.coordinate.latitude;
+           region.center.longitude = self.mapView.userLocation.coordinate.longitude;
+           
+           region.span.latitudeDelta = 0.01;
+           region.span.longitudeDelta = 0.01;
+           
+           [self.mapView setRegion:region animated:YES];
+    }
 }
 
 /*
