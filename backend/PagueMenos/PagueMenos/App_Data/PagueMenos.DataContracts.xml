@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PagueMenos.DataContracts</name>
+    </assembly>
+    <members>
+        <member name="T:PagueMenos.DataContracts.Product.ProductDataContract">
+            <summary>
+            The Product data
+            </summary>
+        </member>
+        <member name="P:PagueMenos.DataContracts.Product.ProductDataContract.Code">
+            <summary>
+            GTIN code of 13 digits (for US and Canada : 12 digits prexifed with 0)
+            </summary>
+        </member>
+        <member name="P:PagueMenos.DataContracts.Product.ProductDataContract.Name">
+            <summary>
+            Commercial name of the product
+            </summary>
+        </member>
+        <member name="P:PagueMenos.DataContracts.Product.ProductDataContract.Weight">
+            <summary>
+            The measure weight in Gramme. Measure concerns the internal unit , not the full pack.
+            </summary>
+        </member>
+        <member name="P:PagueMenos.DataContracts.Product.ProductDataContract.Volume">
+            <summary>
+            The measure volume in millilitres. Measure concerns the internal unit , not the full pack.
+            </summary>
+        </member>
+        <member name="P:PagueMenos.DataContracts.Product.ProductDataContract.Unity">
+            <summary>
+            Number of units in the product. Example: 6 bottles in a commercialized pack (to be able to display 6 x 330ml ).
+            </summary>
+        </member>
+    </members>
+</doc>

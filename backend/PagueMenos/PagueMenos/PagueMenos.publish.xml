@@ -1,0 +1,9 @@
+﻿<publishData>
+  <publishProfile
+    publishUrl="https://thiagosilva-001-site2.mywindowshosting.com:8172/msdeploy.axd"
+    msdeploySite="thiagosilva-001-site2"
+    destinationAppUrl="http://thiagosilva-001-site2.mywindowshosting.com/"
+    profileName="Default Settings"
+    publishMethod="MSDeploy"
+    userName="ifc\thiagosilva-001" />
+</publishData>

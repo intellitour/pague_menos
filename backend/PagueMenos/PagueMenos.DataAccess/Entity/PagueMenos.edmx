@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Entity.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="brand">
+          <Key>
+            <PropertyRef Name="BSIN" />
+          </Key>
+          <Property Name="BSIN" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="BRAND_NM" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="BRAND_TYPE_CD" Type="int" Nullable="false" />
+          <Property Name="BRAND_LINK" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="brand_group">
+          <Key>
+            <PropertyRef Name="BSIN" />
+          </Key>
+          <Property Name="BSIN" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Group" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="brand_owner">
+          <Key>
+            <PropertyRef Name="OWNER_CD" />
+          </Key>
+          <Property Name="OWNER_CD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OWNER_NM" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="OWNER_LINK" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="OWNER_WIKI_EN" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="brand_owner_bsin">
+          <Key>
+            <PropertyRef Name="BSIN" />
+          </Key>
+          <Property Name="BSIN" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="OWNER_CD" Type="int" />
+        </EntityType>
+        <EntityType Name="brand_type">
+          <Key>
+            <PropertyRef Name="BRAND_TYPE_CD" />
+          </Key>
+          <Property Name="BRAND_TYPE_CD" Type="int" Nullable="false" />
+          <Property Name="BRAND_TYPE_NM" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gcp">
+          <Key>
+            <PropertyRef Name="GCP_CD" />
+          </Key>
+          <Property Name="GCP_CD" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="GLN_CD" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="GLN_NM" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="GLN_ADDR_02" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="GLN_ADDR_03" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="GLN_ADDR_04" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="GLN_ADDR_POSTALCODE" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="GLN_ADDR_CITY" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="GLN_COUNTRY_ISO_CD" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="CONTACT_NAME" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="CONTACT_TEL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CONTACT_HOTLINE" Type="varchar" MaxLength="255" />
+          <Property Name="CONTACT_FAX" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CONTACT_MAIL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CONTACT_WEB" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="GLN_LAST_CHANGE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GLN_PROVIDER" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="SEARCH_GTIN_CD" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="GEPIR_GCP_CD" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="ADD_PARTY_ID" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="RETURN_CODE" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="SOURCE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SYNC_DT" Type="date" />
+        </EntityType>
+        <EntityType Name="gs1_gcp_nb">
+          <Key>
+            <PropertyRef Name="prefix_cd" />
+            <PropertyRef Name="gcp_length" />
+          </Key>
+          <Property Name="prefix_cd" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="gcp_length" Type="int" Nullable="false" />
+          <Property Name="gcp_nb" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gcp_rc">
+          <Key>
+            <PropertyRef Name="RETURN_CODE" />
+          </Key>
+          <Property Name="RETURN_CODE" Type="int" Nullable="false" />
+          <Property Name="RETURN_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ORIGIN" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gpc">
+          <Key>
+            <PropertyRef Name="GPC_LANG" />
+            <PropertyRef Name="GPC_CD" />
+          </Key>
+          <Property Name="GPC_LANG" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="GPC_CD" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="GPC_NM" Type="text" Nullable="false" />
+          <Property Name="GPC_LEVEL" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="SOURCE" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gpc_hier">
+          <Key>
+            <PropertyRef Name="GPC_B_CD" />
+          </Key>
+          <Property Name="GPC_S_CD" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="GPC_F_CD" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="GPC_C_CD" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="GPC_B_CD" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_prefix">
+          <Key>
+            <PropertyRef Name="PREFIX_CD" />
+          </Key>
+          <Property Name="PREFIX_CD" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="PREFIX_NM" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="COUNTRY_ISO_CD" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gtin">
+          <Key>
+            <PropertyRef Name="GTIN_CD" />
+          </Key>
+          <Property Name="GTIN_CD" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="GTIN_LEVEL_CD" Type="int" Nullable="false" />
+          <Property Name="GCP_CD" Type="varchar" MaxLength="13" />
+          <Property Name="BSIN" Type="varchar" MaxLength="6" />
+          <Property Name="GPC_S_CD" Type="varchar" MaxLength="8" />
+          <Property Name="GPC_F_CD" Type="varchar" MaxLength="8" />
+          <Property Name="GPC_C_CD" Type="varchar" MaxLength="8" />
+          <Property Name="GPC_B_CD" Type="varchar" MaxLength="8" />
+          <Property Name="GTIN_NM" Type="varchar" MaxLength="255" />
+          <Property Name="PRODUCT_LINE" Type="varchar" MaxLength="255" />
+          <Property Name="M_G" Type="float" />
+          <Property Name="M_OZ" Type="float" />
+          <Property Name="M_ML" Type="float" />
+          <Property Name="M_FLOZ" Type="float" />
+          <Property Name="M_ABV" Type="float" />
+          <Property Name="M_ABW" Type="float" />
+          <Property Name="PKG_UNIT" Type="int" Nullable="false" />
+          <Property Name="PKG_TYPE_CD" Type="int" />
+          <Property Name="REF_CD" Type="varchar" MaxLength="255" />
+          <Property Name="SOURCE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IMG" Type="int" />
+        </EntityType>
+        <EntityType Name="label">
+          <Key>
+            <PropertyRef Name="LABEL_ID" />
+          </Key>
+          <Property Name="LABEL_ID" Type="int" Nullable="false" />
+          <Property Name="LABEL_NM" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LABEL_LINK" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.paguemenos.label_gtin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="label_gtin">
+          <Key>
+            <PropertyRef Name="LABEL_ID" />
+            <PropertyRef Name="GTIN_CD" />
+          </Key>
+          <Property Name="LABEL_ID" Type="int" Nullable="false" />
+          <Property Name="GTIN_CD" Type="varchar" MaxLength="13" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nutrition_us">
+          <Key>
+            <PropertyRef Name="GTIN_CD" />
+          </Key>
+          <Property Name="GTIN_CD" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="INGREDIENTS" Type="text" />
+          <Property Name="SERV_SIZE_G" Type="float" Nullable="false" />
+          <Property Name="SERV_SIZE_ML" Type="float" Nullable="false" />
+          <Property Name="SERV_CT" Type="float" Nullable="false" />
+          <Property Name="CAL" Type="float" Nullable="false" />
+          <Property Name="CAL_FROM_FAT" Type="float" Nullable="false" />
+          <Property Name="TOT_FAT_G" Type="float" Nullable="false" />
+          <Property Name="TOT_FAT_DV" Type="float" Nullable="false" />
+          <Property Name="SAT_FAT_G" Type="float" Nullable="false" />
+          <Property Name="SAT_FAT_DV" Type="float" Nullable="false" />
+          <Property Name="TRANS_FAT_G" Type="float" Nullable="false" />
+          <Property Name="CHOL_MG" Type="float" Nullable="false" />
+          <Property Name="CHOL_DV" Type="float" Nullable="false" />
+          <Property Name="SOD_MG" Type="float" Nullable="false" />
+          <Property Name="SOD_DV" Type="float" Nullable="false" />
+          <Property Name="POT_MG" Type="float" Nullable="false" />
+          <Property Name="POT_DV" Type="float" Nullable="false" />
+          <Property Name="TOT_CARB_G" Type="float" Nullable="false" />
+          <Property Name="TOT_CARB_DV" Type="float" Nullable="false" />
+          <Property Name="DIET_FIBER_G" Type="float" />
+          <Property Name="DIET_FIBER_DV" Type="float" Nullable="false" />
+          <Property Name="SUGARS_G" Type="float" Nullable="false" />
+          <Property Name="PROTEIN_G" Type="float" Nullable="false" />
+          <Property Name="VITAMIN_A" Type="float" Nullable="false" />
+          <Property Name="VITAMIN_C" Type="float" Nullable="false" />
+          <Property Name="CALCIUM" Type="float" Nullable="false" />
+          <Property Name="IRON" Type="float" Nullable="false" />
+          <Property Name="SOURCE" Type="text" />
+          <Property Name="SYNC_DT" Type="date" />
+        </EntityType>
+        <EntityType Name="pkg_type">
+          <Key>
+            <PropertyRef Name="pkg_type_cd" />
+          </Key>
+          <Property Name="pkg_type_cd" Type="int" Nullable="false" />
+          <Property Name="pkg_type_nm" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="pkg_type_desc" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EntityStoreContainer">
+          <EntitySet Name="brand" EntityType="Self.brand" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="brand_group" EntityType="Self.brand_group" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="brand_owner" EntityType="Self.brand_owner" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="brand_owner_bsin" EntityType="Self.brand_owner_bsin" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="brand_type" EntityType="Self.brand_type" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gs1_gcp" EntityType="Self.gs1_gcp" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gs1_gcp_nb" EntityType="Self.gs1_gcp_nb" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gs1_gcp_rc" EntityType="Self.gs1_gcp_rc" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gs1_gpc" EntityType="Self.gs1_gpc" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gs1_gpc_hier" EntityType="Self.gs1_gpc_hier" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gs1_prefix" EntityType="Self.gs1_prefix" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="gtin" EntityType="Self.gtin" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="label" EntityType="Self.label" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="nutrition_us" EntityType="Self.nutrition_us" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="pkg_type" EntityType="Self.pkg_type" Schema="paguemenos" store:Type="Tables" />
+          <EntitySet Name="label_gtin" EntityType="Self.label_gtin" store:Type="Tables" store:Schema="paguemenos">
+            <DefiningQuery>SELECT
+`label_gtin`.`LABEL_ID`, 
+`label_gtin`.`GTIN_CD`
+FROM `label_gtin` AS `label_gtin`</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Entity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="brand">
+          <Key>
+            <PropertyRef Name="BSIN" />
+          </Key>
+          <Property Name="BSIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BRAND_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BRAND_TYPE_CD" Type="Int32" Nullable="false" />
+          <Property Name="BRAND_LINK" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="brand_group">
+          <Key>
+            <PropertyRef Name="BSIN" />
+          </Key>
+          <Property Name="BSIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Group" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="brand_owner">
+          <Key>
+            <PropertyRef Name="OWNER_CD" />
+          </Key>
+          <Property Name="OWNER_CD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OWNER_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OWNER_LINK" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OWNER_WIKI_EN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="brand_owner_bsin">
+          <Key>
+            <PropertyRef Name="BSIN" />
+          </Key>
+          <Property Name="BSIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OWNER_CD" Type="Int32" />
+        </EntityType>
+        <EntityType Name="brand_type">
+          <Key>
+            <PropertyRef Name="BRAND_TYPE_CD" />
+          </Key>
+          <Property Name="BRAND_TYPE_CD" Type="Int32" Nullable="false" />
+          <Property Name="BRAND_TYPE_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gcp">
+          <Key>
+            <PropertyRef Name="GCP_CD" />
+          </Key>
+          <Property Name="GCP_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_ADDR_02" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_ADDR_03" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_ADDR_04" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_ADDR_POSTALCODE" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_ADDR_CITY" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_COUNTRY_ISO_CD" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_NAME" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_TEL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_HOTLINE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_FAX" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_MAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_WEB" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_LAST_CHANGE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GLN_PROVIDER" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEARCH_GTIN_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GEPIR_GCP_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADD_PARTY_ID" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RETURN_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SYNC_DT" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="gs1_gcp_nb">
+          <Key>
+            <PropertyRef Name="prefix_cd" />
+            <PropertyRef Name="gcp_length" />
+          </Key>
+          <Property Name="prefix_cd" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gcp_length" Type="Int32" Nullable="false" />
+          <Property Name="gcp_nb" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gcp_rc">
+          <Key>
+            <PropertyRef Name="RETURN_CODE" />
+          </Key>
+          <Property Name="RETURN_CODE" Type="Int32" Nullable="false" />
+          <Property Name="RETURN_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ORIGIN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gpc">
+          <Key>
+            <PropertyRef Name="GPC_LANG" />
+            <PropertyRef Name="GPC_CD" />
+          </Key>
+          <Property Name="GPC_LANG" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GPC_CD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GPC_NM" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GPC_LEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SOURCE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_gpc_hier">
+          <Key>
+            <PropertyRef Name="GPC_B_CD" />
+          </Key>
+          <Property Name="GPC_S_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GPC_F_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GPC_C_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GPC_B_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gs1_prefix">
+          <Key>
+            <PropertyRef Name="PREFIX_CD" />
+          </Key>
+          <Property Name="PREFIX_CD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PREFIX_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COUNTRY_ISO_CD" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gtin">
+          <Key>
+            <PropertyRef Name="GTIN_CD" />
+          </Key>
+          <Property Name="GTIN_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GTIN_LEVEL_CD" Type="Int32" Nullable="false" />
+          <Property Name="GCP_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="BSIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="GPC_S_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GPC_F_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GPC_C_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GPC_B_CD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GTIN_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCT_LINE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="M_G" Type="Single" />
+          <Property Name="M_OZ" Type="Single" />
+          <Property Name="M_ML" Type="Single" />
+          <Property Name="M_FLOZ" Type="Single" />
+          <Property Name="M_ABV" Type="Single" />
+          <Property Name="M_ABW" Type="Single" />
+          <Property Name="PKG_UNIT" Type="Int32" Nullable="false" />
+          <Property Name="PKG_TYPE_CD" Type="Int32" />
+          <Property Name="REF_CD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SOURCE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IMG" Type="Int32" />
+        </EntityType>
+        <EntityType Name="label">
+          <Key>
+            <PropertyRef Name="LABEL_ID" />
+          </Key>
+          <Property Name="LABEL_ID" Type="Int32" Nullable="false" />
+          <Property Name="LABEL_NM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LABEL_LINK" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nutrition_us">
+          <Key>
+            <PropertyRef Name="GTIN_CD" />
+          </Key>
+          <Property Name="GTIN_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INGREDIENTS" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_SIZE_G" Type="Single" Nullable="false" />
+          <Property Name="SERV_SIZE_ML" Type="Single" Nullable="false" />
+          <Property Name="SERV_CT" Type="Single" Nullable="false" />
+          <Property Name="CAL" Type="Single" Nullable="false" />
+          <Property Name="CAL_FROM_FAT" Type="Single" Nullable="false" />
+          <Property Name="TOT_FAT_G" Type="Single" Nullable="false" />
+          <Property Name="TOT_FAT_DV" Type="Single" Nullable="false" />
+          <Property Name="SAT_FAT_G" Type="Single" Nullable="false" />
+          <Property Name="SAT_FAT_DV" Type="Single" Nullable="false" />
+          <Property Name="TRANS_FAT_G" Type="Single" Nullable="false" />
+          <Property Name="CHOL_MG" Type="Single" Nullable="false" />
+          <Property Name="CHOL_DV" Type="Single" Nullable="false" />
+          <Property Name="SOD_MG" Type="Single" Nullable="false" />
+          <Property Name="SOD_DV" Type="Single" Nullable="false" />
+          <Property Name="POT_MG" Type="Single" Nullable="false" />
+          <Property Name="POT_DV" Type="Single" Nullable="false" />
+          <Property Name="TOT_CARB_G" Type="Single" Nullable="false" />
+          <Property Name="TOT_CARB_DV" Type="Single" Nullable="false" />
+          <Property Name="DIET_FIBER_G" Type="Single" />
+          <Property Name="DIET_FIBER_DV" Type="Single" Nullable="false" />
+          <Property Name="SUGARS_G" Type="Single" Nullable="false" />
+          <Property Name="PROTEIN_G" Type="Single" Nullable="false" />
+          <Property Name="VITAMIN_A" Type="Single" Nullable="false" />
+          <Property Name="VITAMIN_C" Type="Single" Nullable="false" />
+          <Property Name="CALCIUM" Type="Single" Nullable="false" />
+          <Property Name="IRON" Type="Single" Nullable="false" />
+          <Property Name="SOURCE" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="SYNC_DT" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="pkg_type">
+          <Key>
+            <PropertyRef Name="pkg_type_cd" />
+          </Key>
+          <Property Name="pkg_type_cd" Type="Int32" Nullable="false" />
+          <Property Name="pkg_type_nm" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pkg_type_desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="label_gtin">
+          <Key>
+            <PropertyRef Name="LABEL_ID" />
+            <PropertyRef Name="GTIN_CD" />
+          </Key>
+          <Property Name="LABEL_ID" Type="Int32" Nullable="false" />
+          <Property Name="GTIN_CD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PagueMenosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="brand" EntityType="Self.brand" />
+          <EntitySet Name="brand_group" EntityType="Self.brand_group" />
+          <EntitySet Name="brand_owner" EntityType="Self.brand_owner" />
+          <EntitySet Name="brand_owner_bsin" EntityType="Self.brand_owner_bsin" />
+          <EntitySet Name="brand_type" EntityType="Self.brand_type" />
+          <EntitySet Name="gs1_gcp" EntityType="Self.gs1_gcp" />
+          <EntitySet Name="gs1_gcp_nb" EntityType="Self.gs1_gcp_nb" />
+          <EntitySet Name="gs1_gcp_rc" EntityType="Self.gs1_gcp_rc" />
+          <EntitySet Name="gs1_gpc" EntityType="Self.gs1_gpc" />
+          <EntitySet Name="gs1_gpc_hier" EntityType="Self.gs1_gpc_hier" />
+          <EntitySet Name="gs1_prefix" EntityType="Self.gs1_prefix" />
+          <EntitySet Name="gtin" EntityType="Self.gtin" />
+          <EntitySet Name="label" EntityType="Self.label" />
+          <EntitySet Name="nutrition_us" EntityType="Self.nutrition_us" />
+          <EntitySet Name="pkg_type" EntityType="Self.pkg_type" />
+          <EntitySet Name="label_gtin" EntityType="Self.label_gtin" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntityStoreContainer" CdmEntityContainer="PagueMenosEntities">
+          <EntitySetMapping Name="brand">
+            <EntityTypeMapping TypeName="Entity.brand">
+              <MappingFragment StoreEntitySet="brand">
+                <ScalarProperty Name="BSIN" ColumnName="BSIN" />
+                <ScalarProperty Name="BRAND_NM" ColumnName="BRAND_NM" />
+                <ScalarProperty Name="BRAND_TYPE_CD" ColumnName="BRAND_TYPE_CD" />
+                <ScalarProperty Name="BRAND_LINK" ColumnName="BRAND_LINK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="brand_group">
+            <EntityTypeMapping TypeName="Entity.brand_group">
+              <MappingFragment StoreEntitySet="brand_group">
+                <ScalarProperty Name="BSIN" ColumnName="BSIN" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="brand_owner">
+            <EntityTypeMapping TypeName="Entity.brand_owner">
+              <MappingFragment StoreEntitySet="brand_owner">
+                <ScalarProperty Name="OWNER_CD" ColumnName="OWNER_CD" />
+                <ScalarProperty Name="OWNER_NM" ColumnName="OWNER_NM" />
+                <ScalarProperty Name="OWNER_LINK" ColumnName="OWNER_LINK" />
+                <ScalarProperty Name="OWNER_WIKI_EN" ColumnName="OWNER_WIKI_EN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="brand_owner_bsin">
+            <EntityTypeMapping TypeName="Entity.brand_owner_bsin">
+              <MappingFragment StoreEntitySet="brand_owner_bsin">
+                <ScalarProperty Name="BSIN" ColumnName="BSIN" />
+                <ScalarProperty Name="OWNER_CD" ColumnName="OWNER_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="brand_type">
+            <EntityTypeMapping TypeName="Entity.brand_type">
+              <MappingFragment StoreEntitySet="brand_type">
+                <ScalarProperty Name="BRAND_TYPE_CD" ColumnName="BRAND_TYPE_CD" />
+                <ScalarProperty Name="BRAND_TYPE_NM" ColumnName="BRAND_TYPE_NM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gs1_gcp">
+            <EntityTypeMapping TypeName="Entity.gs1_gcp">
+              <MappingFragment StoreEntitySet="gs1_gcp">
+                <ScalarProperty Name="GCP_CD" ColumnName="GCP_CD" />
+                <ScalarProperty Name="GLN_CD" ColumnName="GLN_CD" />
+                <ScalarProperty Name="GLN_NM" ColumnName="GLN_NM" />
+                <ScalarProperty Name="GLN_ADDR_02" ColumnName="GLN_ADDR_02" />
+                <ScalarProperty Name="GLN_ADDR_03" ColumnName="GLN_ADDR_03" />
+                <ScalarProperty Name="GLN_ADDR_04" ColumnName="GLN_ADDR_04" />
+                <ScalarProperty Name="GLN_ADDR_POSTALCODE" ColumnName="GLN_ADDR_POSTALCODE" />
+                <ScalarProperty Name="GLN_ADDR_CITY" ColumnName="GLN_ADDR_CITY" />
+                <ScalarProperty Name="GLN_COUNTRY_ISO_CD" ColumnName="GLN_COUNTRY_ISO_CD" />
+                <ScalarProperty Name="CONTACT_NAME" ColumnName="CONTACT_NAME" />
+                <ScalarProperty Name="CONTACT_TEL" ColumnName="CONTACT_TEL" />
+                <ScalarProperty Name="CONTACT_HOTLINE" ColumnName="CONTACT_HOTLINE" />
+                <ScalarProperty Name="CONTACT_FAX" ColumnName="CONTACT_FAX" />
+                <ScalarProperty Name="CONTACT_MAIL" ColumnName="CONTACT_MAIL" />
+                <ScalarProperty Name="CONTACT_WEB" ColumnName="CONTACT_WEB" />
+                <ScalarProperty Name="GLN_LAST_CHANGE" ColumnName="GLN_LAST_CHANGE" />
+                <ScalarProperty Name="GLN_PROVIDER" ColumnName="GLN_PROVIDER" />
+                <ScalarProperty Name="SEARCH_GTIN_CD" ColumnName="SEARCH_GTIN_CD" />
+                <ScalarProperty Name="GEPIR_GCP_CD" ColumnName="GEPIR_GCP_CD" />
+                <ScalarProperty Name="ADD_PARTY_ID" ColumnName="ADD_PARTY_ID" />
+                <ScalarProperty Name="RETURN_CODE" ColumnName="RETURN_CODE" />
+                <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+                <ScalarProperty Name="SYNC_DT" ColumnName="SYNC_DT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gs1_gcp_nb">
+            <EntityTypeMapping TypeName="Entity.gs1_gcp_nb">
+              <MappingFragment StoreEntitySet="gs1_gcp_nb">
+                <ScalarProperty Name="prefix_cd" ColumnName="prefix_cd" />
+                <ScalarProperty Name="gcp_length" ColumnName="gcp_length" />
+                <ScalarProperty Name="gcp_nb" ColumnName="gcp_nb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gs1_gcp_rc">
+            <EntityTypeMapping TypeName="Entity.gs1_gcp_rc">
+              <MappingFragment StoreEntitySet="gs1_gcp_rc">
+                <ScalarProperty Name="RETURN_CODE" ColumnName="RETURN_CODE" />
+                <ScalarProperty Name="RETURN_NAME" ColumnName="RETURN_NAME" />
+                <ScalarProperty Name="ORIGIN" ColumnName="ORIGIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gs1_gpc">
+            <EntityTypeMapping TypeName="Entity.gs1_gpc">
+              <MappingFragment StoreEntitySet="gs1_gpc">
+                <ScalarProperty Name="GPC_LANG" ColumnName="GPC_LANG" />
+                <ScalarProperty Name="GPC_CD" ColumnName="GPC_CD" />
+                <ScalarProperty Name="GPC_NM" ColumnName="GPC_NM" />
+                <ScalarProperty Name="GPC_LEVEL" ColumnName="GPC_LEVEL" />
+                <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gs1_gpc_hier">
+            <EntityTypeMapping TypeName="Entity.gs1_gpc_hier">
+              <MappingFragment StoreEntitySet="gs1_gpc_hier">
+                <ScalarProperty Name="GPC_S_CD" ColumnName="GPC_S_CD" />
+                <ScalarProperty Name="GPC_F_CD" ColumnName="GPC_F_CD" />
+                <ScalarProperty Name="GPC_C_CD" ColumnName="GPC_C_CD" />
+                <ScalarProperty Name="GPC_B_CD" ColumnName="GPC_B_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gs1_prefix">
+            <EntityTypeMapping TypeName="Entity.gs1_prefix">
+              <MappingFragment StoreEntitySet="gs1_prefix">
+                <ScalarProperty Name="PREFIX_CD" ColumnName="PREFIX_CD" />
+                <ScalarProperty Name="PREFIX_NM" ColumnName="PREFIX_NM" />
+                <ScalarProperty Name="COUNTRY_ISO_CD" ColumnName="COUNTRY_ISO_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gtin">
+            <EntityTypeMapping TypeName="Entity.gtin">
+              <MappingFragment StoreEntitySet="gtin">
+                <ScalarProperty Name="GTIN_CD" ColumnName="GTIN_CD" />
+                <ScalarProperty Name="GTIN_LEVEL_CD" ColumnName="GTIN_LEVEL_CD" />
+                <ScalarProperty Name="GCP_CD" ColumnName="GCP_CD" />
+                <ScalarProperty Name="BSIN" ColumnName="BSIN" />
+                <ScalarProperty Name="GPC_S_CD" ColumnName="GPC_S_CD" />
+                <ScalarProperty Name="GPC_F_CD" ColumnName="GPC_F_CD" />
+                <ScalarProperty Name="GPC_C_CD" ColumnName="GPC_C_CD" />
+                <ScalarProperty Name="GPC_B_CD" ColumnName="GPC_B_CD" />
+                <ScalarProperty Name="GTIN_NM" ColumnName="GTIN_NM" />
+                <ScalarProperty Name="PRODUCT_LINE" ColumnName="PRODUCT_LINE" />
+                <ScalarProperty Name="M_G" ColumnName="M_G" />
+                <ScalarProperty Name="M_OZ" ColumnName="M_OZ" />
+                <ScalarProperty Name="M_ML" ColumnName="M_ML" />
+                <ScalarProperty Name="M_FLOZ" ColumnName="M_FLOZ" />
+                <ScalarProperty Name="M_ABV" ColumnName="M_ABV" />
+                <ScalarProperty Name="M_ABW" ColumnName="M_ABW" />
+                <ScalarProperty Name="PKG_UNIT" ColumnName="PKG_UNIT" />
+                <ScalarProperty Name="PKG_TYPE_CD" ColumnName="PKG_TYPE_CD" />
+                <ScalarProperty Name="REF_CD" ColumnName="REF_CD" />
+                <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="label">
+            <EntityTypeMapping TypeName="Entity.label">
+              <MappingFragment StoreEntitySet="label">
+                <ScalarProperty Name="LABEL_ID" ColumnName="LABEL_ID" />
+                <ScalarProperty Name="LABEL_NM" ColumnName="LABEL_NM" />
+                <ScalarProperty Name="LABEL_LINK" ColumnName="LABEL_LINK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nutrition_us">
+            <EntityTypeMapping TypeName="Entity.nutrition_us">
+              <MappingFragment StoreEntitySet="nutrition_us">
+                <ScalarProperty Name="GTIN_CD" ColumnName="GTIN_CD" />
+                <ScalarProperty Name="INGREDIENTS" ColumnName="INGREDIENTS" />
+                <ScalarProperty Name="SERV_SIZE_G" ColumnName="SERV_SIZE_G" />
+                <ScalarProperty Name="SERV_SIZE_ML" ColumnName="SERV_SIZE_ML" />
+                <ScalarProperty Name="SERV_CT" ColumnName="SERV_CT" />
+                <ScalarProperty Name="CAL" ColumnName="CAL" />
+                <ScalarProperty Name="CAL_FROM_FAT" ColumnName="CAL_FROM_FAT" />
+                <ScalarProperty Name="TOT_FAT_G" ColumnName="TOT_FAT_G" />
+                <ScalarProperty Name="TOT_FAT_DV" ColumnName="TOT_FAT_DV" />
+                <ScalarProperty Name="SAT_FAT_G" ColumnName="SAT_FAT_G" />
+                <ScalarProperty Name="SAT_FAT_DV" ColumnName="SAT_FAT_DV" />
+                <ScalarProperty Name="TRANS_FAT_G" ColumnName="TRANS_FAT_G" />
+                <ScalarProperty Name="CHOL_MG" ColumnName="CHOL_MG" />
+                <ScalarProperty Name="CHOL_DV" ColumnName="CHOL_DV" />
+                <ScalarProperty Name="SOD_MG" ColumnName="SOD_MG" />
+                <ScalarProperty Name="SOD_DV" ColumnName="SOD_DV" />
+                <ScalarProperty Name="POT_MG" ColumnName="POT_MG" />
+                <ScalarProperty Name="POT_DV" ColumnName="POT_DV" />
+                <ScalarProperty Name="TOT_CARB_G" ColumnName="TOT_CARB_G" />
+                <ScalarProperty Name="TOT_CARB_DV" ColumnName="TOT_CARB_DV" />
+                <ScalarProperty Name="DIET_FIBER_G" ColumnName="DIET_FIBER_G" />
+                <ScalarProperty Name="DIET_FIBER_DV" ColumnName="DIET_FIBER_DV" />
+                <ScalarProperty Name="SUGARS_G" ColumnName="SUGARS_G" />
+                <ScalarProperty Name="PROTEIN_G" ColumnName="PROTEIN_G" />
+                <ScalarProperty Name="VITAMIN_A" ColumnName="VITAMIN_A" />
+                <ScalarProperty Name="VITAMIN_C" ColumnName="VITAMIN_C" />
+                <ScalarProperty Name="CALCIUM" ColumnName="CALCIUM" />
+                <ScalarProperty Name="IRON" ColumnName="IRON" />
+                <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+                <ScalarProperty Name="SYNC_DT" ColumnName="SYNC_DT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pkg_type">
+            <EntityTypeMapping TypeName="Entity.pkg_type">
+              <MappingFragment StoreEntitySet="pkg_type">
+                <ScalarProperty Name="pkg_type_cd" ColumnName="pkg_type_cd" />
+                <ScalarProperty Name="pkg_type_nm" ColumnName="pkg_type_nm" />
+                <ScalarProperty Name="pkg_type_desc" ColumnName="pkg_type_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="label_gtin">
+            <EntityTypeMapping TypeName="Entity.label_gtin">
+              <MappingFragment StoreEntitySet="label_gtin">
+                <ScalarProperty Name="LABEL_ID" ColumnName="LABEL_ID" />
+                <ScalarProperty Name="GTIN_CD" ColumnName="GTIN_CD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

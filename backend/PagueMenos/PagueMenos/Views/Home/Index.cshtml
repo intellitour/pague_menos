@@ -1,0 +1,23 @@
+﻿<div class="jumbotron">
+    <h1>Pague Menos</h1>
+    <p class="lead">Back-end REST Service</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Sobre o Pague Menos</h2>
+        <p>É um aplicativo para dispositivos móveis (smartphones e tablets) cuja finalidade principal é o registro e consulta de preços de produtos em um dado estabelecimento comercial. Este aplicativo funcionará com o apoio de serviços disponibilizados por um servidor que armazenará as informações coletadas.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Backend</h2>
+        <p>A API foi desenvolvida como um serviço em REST utilizando Asp.Net MVC 5 e MySQL.</p>
+        <p>Possui a função de armazenar os cadastros de produtos bem como os locais disponíveis e seus respectivos valores.</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Help")">Ajuda da API &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Uso da API e testes</h2>
+        <p>Todas as opções disponíveis da API estão documentadas na seção de ajuda.</p>
+        <p>Para consumir os métodos da api basta acessar paguemenos.tk/api/[nome do método?parametros....].</p>
+        <p>Os testes da API podem ser feitos através do próprio browser normalmente, mas recomendamos o <a href="http://www.soapui.org/" target="_blank">SOAP UI</a> como ferramenta de teste.</p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","Help")">Ajuda da API &raquo;</a>&nbsp;&nbsp;<a href="/api/Product?pageSize=100&pageIndex=0" class="btn btn-default">Exemplo de Uso</a></p>
+    </div>
+</div>
